@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-b = Book.create([ { title: "Test" } ])
-b.save
 
+
+Book.delete_all
+b = Book.create([ { title: "Test" } ])
+b.save()
+
+User.delete_all
+u = User.create([ {username: "hendrik", password: "test" } ])
+u.books << b
